@@ -8,7 +8,7 @@ import { environment } from '../../../environment/environment';
 })
 export class ApiNasaService {
 
-  private api_key = '0Hx8UHKwUQkUoiEJE6wFlWjbhZRZHcoTG5rfuq7L';
+  key = environment.api_key;
   api = environment.api_nasa;
 
   constructor(private httpClient: HttpClient) { }
@@ -17,7 +17,7 @@ export class ApiNasaService {
     return from(this.getHeaders()).pipe(
       switchMap((headers) =>
         this.httpClient.get(
-          `${this.api}/planetary/apod?api_key=${this.api_key}&count=${count}`,
+          `${this.api}/planetary/apod?api_key=${this.key}&count=${count}`,
           { headers }
         )
       )
