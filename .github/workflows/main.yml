@@ -31,10 +31,12 @@ jobs:
 
       # Install dependences
       - name: Install deps
+        working-directory: ng-nasa-api
         run: npm i
 
       # Build app for production
       - name: Build app bundle
+        working-directory: ng-nasa-api
         run: npm run build:prod
 
       # Route file renaming
@@ -45,6 +47,6 @@ jobs:
       - name: Deploy to pages
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with: 
-          build_dir: dist/ng-nasa-api
+          build_dir: dist/ng-nasa-api/browser
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
