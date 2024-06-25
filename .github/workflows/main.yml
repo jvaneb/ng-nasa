@@ -39,7 +39,7 @@ jobs:
 
       # Route file renaming
       - name: Rename index for routing
-        run: mv dist/ng-nasa-api/index.html dist/ng-nasa-api/404.html
+        run: mv dist/ng-nasa-api/browser/index.html dist/ng-nasa-api/browser/404.html
 
       # Deploy to Github pages
       - name: Deploy to pages
