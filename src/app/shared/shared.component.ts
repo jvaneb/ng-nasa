@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ContentComponent } from './components/layout/content/content.component';
 
 @Component({
   selector: 'app-shared',

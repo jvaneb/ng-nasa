@@ -14,14 +14,17 @@ export class HomeComponent {
   constructor(private apiService: ApiNasaService) {}
 
   arrayApod: Array<Apod> = [];
+  
 
   ngOnInit() {
+    
     this.apiService.apiApod(3).subscribe(res => {
       this.arrayApod = res;
-      console.log('Respuesta: ', this.arrayApod);      
+      // console.log('Respuesta: ', this.arrayApod);      
     },
     error => {
       console.error(error);
-    })
+    });
+    
   }
 }

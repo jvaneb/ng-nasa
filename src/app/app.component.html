@@ -1,2 +1,8 @@
-
-<router-outlet />
+<div class="star-background">
+    <div *ngFor="let star of stars"
+       class="star"
+       [ngStyle]="{
+         top: star.top + '%',
+         left: star.left + '%'}"></div>
+    <router-outlet />
+</div>
