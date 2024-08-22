@@ -8,9 +8,13 @@ export const routes: Routes = [
       component: ContentComponent,
       children: [
         { 
-            path: '',
-            loadComponent: () => import('./home/home.component').then( m => m.HomeComponent) 
+          path: '',
+          loadComponent: () => import('./home/home.component').then( m => m.HomeComponent) 
         },
+        {
+          path: 'blog-detail/:date',
+          loadComponent: () => import('./blog-detail/blog-detail.component').then( m => m.BlogDetailComponent)
+        }
       ]
     }
 ];

@@ -1,12 +1,47 @@
 #p-title {
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 8rem;
-    margin: 0 auto;
-    font-family: "Courier New";
-    border-right: 3px solid #f7f9fa;
-    animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  font-family: "Courier New";
+  border-right: 3px solid #f7f9fa;
+  animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 640px) {
+  #p-title {
+    font-size: 2.5rem; /* Ajuste del tamaño de fuente */
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%; /* Ancho completo en pantallas pequeñas */
+    }
+  }
+}
+
+/* Ajuste para pantallas medianas */
+@media (min-width: 641px) and (max-width: 1024px) {
+  #p-title {
+    font-size: 4rem; /* Ajuste del tamaño de fuente */
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 85%; /* Ancho ajustado para pantallas medianas */
+    }
+  }
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 1025px) {
+  #p-title {
+    font-size: 6rem;
   }
   @keyframes typing {
     from {
@@ -16,10 +51,10 @@
       width: 60%;
     }
   }
-  @keyframes blink {
-    50% {
-      border-color: transparent;
-    }
-  }
+}
 
-  
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

@@ -3,27 +3,36 @@
 @tailwind utilities;
 
 .star-background {
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: black;
-    overflow: hidden;
-  }
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+}
   
-  .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    border-radius: 50%;
-    animation: stars 10s infinite ease-in-out;
-  }
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  animation: stars 25s infinite ease-in-out;
+}
   
-  @keyframes stars {
-    0%, 100% {
-      transform: translateY(80%) scale(1);
-    }
-    50% {
-      transform: translateX(-10vh) scale(1);
-    }
+@keyframes stars {
+  0% {
+    transform: translate(0, 0);
   }
+  25% {
+    transform: translate(calc(var(--translate-x) * 7vw), calc(var(--translate-y) * 80vh));
+  }
+  50% {
+    transform: translate(calc(var(--translate-x) * -7vw), calc(var(--translate-y) * 80vh));
+  }
+  75% {
+    transform: translate(calc(var(--translate-x) * 7vw), calc(var(--translate-y) * -80vh));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

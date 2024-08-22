@@ -13,11 +13,22 @@ export class ApiNasaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  apiApod(count: number): Observable<any> {
+  apodLimit(count: number): Observable<any> {
     return from(this.getHeaders()).pipe(
       switchMap((headers) =>
         this.httpClient.get(
           `${this.api}/planetary/apod?api_key=${this.key}&count=${count}`,
+          { headers }
+        )
+      )
+    );
+  }
+
+  apodDate(date: any): Observable<any> {
+    return from(this.getHeaders()).pipe(
+      switchMap((headers) =>
+        this.httpClient.get(
+          `${this.api}/planetary/apod?api_key=${this.key}&date=${date}`,
           { headers }
         )
       )
