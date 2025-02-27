@@ -9,36 +9,26 @@ import { environment } from '../../../environment/environment';
 export class ApiNasaService {
 
   key = environment.api_key;
-  api = environment.api_nasa;
+  apiApod = environment.api_nasa;
+  apiExoplanets = environment.api_exoplanets;
 
   constructor(private httpClient: HttpClient) { }
 
   apodLimit(count: number): Observable<any> {
-    return from(this.getHeaders()).pipe(
-      switchMap((headers) =>
-        this.httpClient.get(
-          `${this.api}/planetary/apod?api_key=${this.key}&count=${count}`,
-          { headers }
-        )
-      )
-    );
+    return this.httpClient.get(
+      `${this.apiApod}/planetary/apod?api_key=${this.key}&count=${count}`
+    )
   }
 
   apodDate(date: any): Observable<any> {
-    return from(this.getHeaders()).pipe(
-      switchMap((headers) =>
-        this.httpClient.get(
-          `${this.api}/planetary/apod?api_key=${this.key}&date=${date}`,
-          { headers }
-        )
-      )
-    );
+    return this.httpClient.get(
+      `${this.apiApod}/planetary/apod?api_key=${this.key}&date=${date}`
+    )
   }
 
-  private async getHeaders(): Promise<HttpHeaders> {
-    let headers = new HttpHeaders();
-    headers = headers.set("Content-Type", "application/json");
-
-    return headers;
+  exoplanetsAll(): Observable<any> {
+    return this.httpClient.get(
+      `${this.apiExoplanets}?table=cumulative&format=json&where=koi_prad<2%20and%20koi_teq>180%20and%20koi_teq<303%20and%20koi_disposition='CONFIRMED'`
+    )
   }
 }

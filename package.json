@@ -21,6 +21,7 @@
     "@angular/router": "^17.2.0",
     "flowbite": "^2.5.1",
     "rxjs": "~7.8.0",
+    "three": "^0.167.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },
@@ -29,6 +30,7 @@
     "@angular/cli": "^17.2.2",
     "@angular/compiler-cli": "^17.2.0",
     "@types/jasmine": "~5.1.0",
+    "@types/three": "^0.167.2",
     "autoprefixer": "^10.4.19",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

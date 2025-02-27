@@ -14,6 +14,10 @@ export const routes: Routes = [
         {
           path: 'blog-detail/:date',
           loadComponent: () => import('./blog-detail/blog-detail.component').then( m => m.BlogDetailComponent)
+        },
+        {
+          path: 'exoplanet',
+          loadComponent: () => import('./exoplanet/exoplanet.component').then( m => m.ExoplanetComponent)
         }
       ]
     }

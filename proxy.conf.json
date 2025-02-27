@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://exoplanetarchive.ipac.caltech.edu",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }

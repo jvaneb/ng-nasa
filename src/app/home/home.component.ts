@@ -15,10 +15,18 @@ export class HomeComponent {
   constructor(private apiService: ApiNasaService) {}
 
   arrayApod: Array<Apod> = [];
+  stars: { top: number, left: number, translateX: number, translateY: number }[] = [];
   
 
   ngOnInit() {
-    
+    for (let i = 0; i < 100; i++) {
+      const top = Math.random() * 100;
+      const left = Math.random() * 97;
+      const translateX = (Math.random() - 0.5) * 1;
+      const translateY = (Math.random() - 0.5) * 1;
+
+      this.stars.push({ top, left, translateX, translateY });
+    }
     this.apiService.apodLimit(3).subscribe(res => {
       this.arrayApod = res;
       // console.log('Respuesta: ', this.arrayApod);      

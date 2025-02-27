@@ -5,5 +5,5 @@ export const environment = {
       
     //Endpoint API NASA
     api_nasa: 'https://api.nasa.gov',
-    
+    api_exoplanets: 'https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI'    
   };
